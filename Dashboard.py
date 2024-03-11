@@ -9,6 +9,7 @@ st.set_page_config(page_title="Dashboard!!!", page_icon=":_bar_chart",layout="wi
 
 st.title(":bar_chart: Dashboard")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
+df = None
 
 fl = st.file_uploader(":file_folder: Upload a file", type=(["csv","xlsx","xls"]))
 if fl is not None:
