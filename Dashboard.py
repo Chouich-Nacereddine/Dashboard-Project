@@ -15,9 +15,9 @@ if fl is not None:
     filename = fl.name
     st.write(":open_file_folder:", filename)
     df = pd.read_excel(filename)
-else:
-    os.chdir(r"C:\Users\nchouich\OneDrive - Capgemini\Bureau\Dashboard-Project")
-    df = pd.read_excel("Data.xlsx")   
+# else:
+#     os.chdir(r"C:\Users\nchouich\OneDrive - Capgemini\Bureau\Dashboard-Project")
+#     df = pd.read_excel("Data.xlsx")   
 
 col1 , col2 = st.columns((2))
 df["Date"] = pd.to_datetime(df["Date"])
