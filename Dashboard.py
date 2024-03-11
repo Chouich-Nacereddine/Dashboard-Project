@@ -1,5 +1,5 @@
 import streamlit as st
-import plotly.express as px
+# import plotly.express as px
 import pandas as pd
 import warnings
 import os
@@ -35,12 +35,18 @@ with col2:
 
 df = df[(df["Date"] >= date1) & (df["Date"] <= date2)].copy()
 
-st.bar_chart(df , x='Date' , y=["Instagram (mins)", "YouTube (mins)", "Video Games (mins)","Studies (mins)","Sports (mins)","Family (mins)","Worship (mins)"])
 
 filter_choice1 = st.sidebar.selectbox(
     "Choose Your Filter: ",
     ("All", "Instagram (mins)", "YouTube (mins)", "Video Games (mins)","Studies (mins)","Sports (mins)","Family (mins)","Worship (mins)")
 )
+
+
+if filter_choice1 == 'All':
+    st.bar_chart(df , x='Date' , y=["Instagram (mins)", "YouTube (mins)", "Video Games (mins)","Studies (mins)","Sports (mins)","Family (mins)","Worship (mins)"])
+else:
+    st.bar_chart(df , x='Date' , y=filter_choice1)
+        
 
 col3 , col4 = st.columns((2))
 
